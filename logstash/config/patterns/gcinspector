@@ -1,0 +1,2 @@
+GCINSPECTOR_GC_DURATION_MS (\d+)
+GCINSPECTOR_GC_TYPE Young Generation|Old Generation
