@@ -1,0 +1,5 @@
+MILLISECOND (\d{3})
+JAVALOGBACKTIMESTAMP %{YEAR}-%{MONTHNUM}-%{MONTHDAY}[T ]%{HOUR}:%{MINUTE}:%{SECOND},%{MILLISECOND}
+CASS_BASE ^%{LOGLEVEL:level}(\s{1,2})\[(%{DATA:process}(-|:)%{INT:threadId}|%{DATA:process})\](\s{1,2})%{JAVALOGBACKTIMESTAMP:timestamp}(\s{1,2})(SPARK-MASTER|SPARK-WORKER|GREMLIN)?(\s{1,2})(?<file>(%{WORD}\.(java|scala))):%{INT:line_number}(\s{1,2})-
+
+CASS_DEFAULT %{CASS_BASE}(\s{1,2})(?<message>(.|\r|\n)*)
